@@ -1,5 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	display: flex;
+	padding: 0px 20px;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	background: #020024;
+	background: linear-gradient(20deg, rgb(26, 0, 36) 0%, rgb(32, 3, 65) 100%);
+}
+
+.slide {
+	height: clamp(40vh, 50vw, 80vh);
+	border-radius: 8px;
+	margin: 10px;
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+	position: relative;
+	filter: grayscale(90%);
+	border: none;
+
+	& h2 {
+		color: #eee;
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+		opacity: 0;
+		transition: opacity 0.4s ease-in;
+		filter: drop-shadow(0px 40px 10px #171717);
+	}
+}
+
+.slide.active {
+	flex: 6;
+	box-shadow: 0px 20px 20px rgb(19, 3, 38);
+	filter: grayscale(0%);
+	border: 2px solid black;
+
+	& h2 {
+		opacity: 1;
+	}
 }
